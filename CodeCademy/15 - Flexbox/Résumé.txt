@@ -1,0 +1,30 @@
+Révision: Flexbox
+Tu devrais être fier de toi! Vous avez appris les propriétés les plus importantes de la flexbox. La Flexbox est un art et une science. vous pouvez l'utiliser pour transformer la disposition en éléments multiples en un morceau de gâteau. Vous savez tout le nécessaire pour commencer à l'utiliser dans vos propres projets.
+
+1- display: flex change un élément en un conteneur de niveau bloc avec des éléments flexibles à l'intérieur.
+
+2- display: inline-flex permet à plusieurs conteneurs flex d’apparaître alignés les uns aux autres.
+
+3- justify-content est utilisé pour espacer les objets le long de l’axe principal.
+
+4- align-items est utilisé pour espacer les objets le long de l'axe transversal.
+
+5- flex-grow est utilisé pour spécifier combien d'espace (et dans quelles proportions) les éléments flexibles absorbent le long de l'axe principal.
+
+6- flex-shrink est utilisé pour spécifier la quantité d'éléments flexibles qui rétrécit et dans quelles proportions le long de l'axe principal.
+
+7- flex-basis est utilisé pour spécifier la taille initiale d'un élément stylé avec flex-growet / ou flex-shrink.
+
+8- flex est utilisé pour spécifier flex-grow, flex-shrinket flex-basisdans une déclaration.
+
+9- flex-wrap spécifie que les éléments doivent se déplacer le long de l'axe transversal si le conteneur Flex n'est pas assez grand.
+
+10- align-content est utilisé pour espacer les lignes le long de l'axe transversal.
+
+11- flex-direction est utilisé pour spécifier les axes majeur et transversal.
+
+12- flex-flow est utilisé pour spécifier flex-wrapet flex-directiondans une déclaration.
+
+13- Les conteneurs flexibles peuvent être imbriqués l'un dans l'autre en déclarant display: flex ou display: inline-flex pour les enfants des conteneurs flexibles.
+
+Appliquons quelques-unes des propriétés que vous avez apprises pour organiser une section de la page Web dans le navigateur à droite!

@@ -1,0 +1,57 @@
+* {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 10 auto;
+    padding: 0;
+}
+
+
+h1 {
+    color: SeaGreen;
+}
+
+
+p,
+li {
+    font-size: 18px;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+header {
+    font-family: helvetica;
+    font-size: 31px;
+    font-weight: bold;
+    color: khaki;
+    text-align: center;
+    background-image: url(pattern.jpeg);
+}
+
+.title {
+    font-family: helvetica;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+#green {
+    background-color: mediumspringgreen
+}
+
+#red {
+    background-color: lightcoral;
+}
+
+#bleu {
+    background-color: skyblue;
+}
+
+.price {
+    color: blue;
+    font-weight: bold;
+    font-family: helvetica;
+}
+
+

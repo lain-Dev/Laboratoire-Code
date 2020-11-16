@@ -1,0 +1,100 @@
+//Section Formulaire
+//====================
+
+.formulaire{
+    background: linear-gradient(to right top, #ee9696 -50%, #458fb1 50%, #ee9696 150%);
+    padding: 60px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.myform{
+    background-color: #396781;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.myform h1{
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.myform input,
+.myform textarea{
+    margin-top: 20px;
+    background-color: transparent;
+    padding: 7px;
+    width: 450px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+
+
+.showcase .btn__form{
+    margin-left: 360px;
+    background-color: #c42525;
+    color: #fff;
+    font-size: 15px;
+    padding: 7px 18px;
+    
+}
+
+.case__info{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.case__info h1{
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.case__info p{
+    font-size: 15px;
+}
+
+.case__info .address,
+.case__info .phone,
+.case__info .web{
+    margin-bottom: 20px;
+    background-color: #396781;
+    padding: 20px 0 10px 20px;
+}
+
+@media only screen and (max-width: 850px){
+    .formulaire{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+    .formulaire{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .myform input,
+    .myform textarea{
+    width: 250px;
+    }
+
+    .showcase .btn__form{
+        margin-left: 150px;
+        
+    }
+
+    .case__info .address,
+    .case__info .phone,
+    .case__info .web{
+    width: auto;
+    }
+}

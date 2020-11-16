@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main {
+    border: 1px dotted grey;
+    border-radius: 5px;
+    width: 55%;
+    margin: 30px auto 30px auto;
+    padding: 20px;
+}
+/*
+#app {
+    border: 1px solid red;
+}
+*/
+
+#additem {
+    margin: 20px 0px;
+}
+
+#newItem {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#btn {
+    width: 100%;
+    background-color: royalblue;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    border: 0px;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+
+.item {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0px;
+}

@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Ubuntu",sans-serif;
+    box-sizing: border-box;
+  }
+
+  .navbar{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(70, 7, 25);
+    width: 100%;
+    color: white;
+    z-index: 999;
+    position: fixed;
+  }
+
+  .nav-gauche {
+      display: flex;
+      position: relative;
+      justify-content: flex-end;
+      cursor: pointer;
+     
+  }
+
+  a, a:visited {
+    /* Les liens "au repos" et déjà visités antérieurement */
+    color: #c7c7c7; /* couleur blanche */
+    font-size: 15px;
+  }
+  a:hover, a:focus, a:active {
+    /* Les liens au survol, au focus, et actifs : on leur donne la couleur rouge pour l'exemple */
+    color: #ffffff;
+  }
+
+  .nav-titre {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+
+  .nav-menu {
+      display: flex;
+  }
+
+  .nav-menu a {
+    margin: auto 15px;
+  }
+
+#home {
+  height: 100vh;
+  background-image: url(../image/restaurant.jpg);
+  -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home h1 {
+  color: #ffffff;
+}
+
+.cadre-home {
+  padding: 15px 30px;
+  background-color: RGBA(0,0,0,0.46);
+  border-radius: 2px;
+}
+
+#philo {
+  padding: 2% 10%;
+}
+
+#philo h1, .titre-carte, .titre-infos, .titre-contact {
+  color: rgb(70, 7, 25);
+  text-align: center;
+  align-items: flex-start;
+  padding-top: 50px;
+  font-size: 25px;
+}
+
+.philo-presentation {
+  display: flex;
+  padding: 5% 10%;
+
+}
+
+.cadre-philo {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.philo-presentation img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.carte, .container-contact {
+  background-color: rgb(212, 211, 211);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu1, .menu2 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.menu1 p, .menu2 p {
+  padding-top: 20px;
+  padding-bottom: 20px;
+} 
+
+.carte img {
+  height: 500px;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-infos {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.module-infos {
+  height: 650px;
+}
+
+.infos-horaires {
+
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.btn {
+  background-color: rgb(70, 7, 25);
+  color: #ffffff;
+  height: 30px;
+  width: 90px;
+}
+
+
+footer {
+  display: flex;
+  background-color: rgb(70, 7, 25);
+  color: white;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+}

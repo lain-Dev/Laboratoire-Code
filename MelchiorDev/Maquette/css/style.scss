@@ -1,0 +1,61 @@
+/*
+
+// A LIRE //
+Technologie utilisée ici est du SASS, car il facilite la lisisbilité du code, que se retrouve 
+franctionné en plusieurs fichiers. Mais le principe reste le meme d'un point de vue style CSS
+Je suis resté le plus simple possible quant à l'utilisation des classes. Donc ne vous inquietez pas !
+
+
+- Le fichier prinicpale est le < style.scss >, car c'est vers lui que converge tous les autres fichiers
+se trouvant dans les dossiers < layout, tools >. le fichiers généré est le < style.min.css >.
+
+Rester en cohérence avec les exigences de la maquette etait là la principale requete. 
+Pour nous familiarisé avec les display: flex et Grid. 
+*/
+
+
+//Variables ( Le CSS nous permet désormais d'utiliser des variables dans notre code )
+//===========
+:root {
+    --primaryColor:  #458fb1;
+}
+
+
+
+//Générique (ce ficjier reset.scss, initialise toutes les classes et valeurs)
+//=============
+
+@import "tools/reset";
+
+
+
+
+body{
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.4;
+    color: #000;
+}
+
+
+//Le container ici va nous permettre de centrer le contenu de notre page.
+.container,
+%container{
+    max-width: 1370px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Différentes vues (Pour un travail beaucoup plus optimal, les fichiers ont été separés, mais pour
+ceux qui s'y connaissent pas, l'approche d'un CSS classique est recommandé. Le résultat sera le meme.
+*/
+//==================
+@import "layout/menu";
+@import "layout/landing";
+@import "layout/about";
+@import "layout/working";
+@import "layout/quote";
+@import "layout/form";
+@import "layout/footer";

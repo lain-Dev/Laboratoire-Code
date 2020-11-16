@@ -1,0 +1,44 @@
+//About Section
+//===============
+
+.about{
+    @extend %container;
+    margin-top: 60px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.about__heading h2{
+    font-weight: bold;
+}
+
+
+.para__heading > *{
+    margin-top: 15px;
+}
+
+.para__heading p{
+    font-size: 15px;
+}
+
+.about__heading .btn__about{
+    display: inline-block;
+    margin-top: 25px;
+    font-size: 15px;
+    border: none;
+    padding: 5px 10px;
+    background-color: #c42525;
+    color: #fff;
+}
+
+@media only screen and(max-width:970px){
+    .about{
+        grid-template-columns: 1fr;
+    }
+    .about__img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

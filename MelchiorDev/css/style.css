@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+}
+header {
+    background-color: cadetblue;
+    height: 800px;
+}
+
+#en-tete {
+    padding-top: 150px;
+    width: 600px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+    text-align: center;
+}
+
+#logo {
+    position: relative;
+    margin-top: 70px;
+    width: 100px;
+    height: auto;
+    margin-left: 100px;
+}
+
+#button {
+    border-radius: 10%;
+    float: right;
+    margin-right: 100px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    border: transparent;
+    padding: 0px 0px;
+}
+
+#avatar {
+    width: 15rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+header h2 p {
+    text-align: center;
+}
+
+#mainnav {
+    height: 200px;
+}
+
+hr {
+   height: 5px;
+   border: 0px white;
+   background-color: white;
+}
+
+.SpacedView { 
+    flex: 1; padding: 0 10px; 
+    justify-content: space-around;
+}
+
+#textWorking {
+    text-align: center;
+}
+
+#men {
+    margin-top: 145px;
+}
+
+#textprocess {
+    padding-top: 50px;
+}
+
+#imgworking {
+    padding-top: 50px;
+}
+
+#experience {
+    background-color: lightseagreen;
+    display: flex;
+    justify-content: space-around;
+}
+
+#conteneur1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+#conteneur2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+

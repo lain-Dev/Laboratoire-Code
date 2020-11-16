@@ -1,0 +1,19 @@
+//Footer
+//==============
+.footer{
+    text-align: center;
+    padding: 50px;
+    background-color: #000;
+    color: #fff;
+}
+
+.footer .social__icon i{
+    padding: 0 8px 0 5px ;
+    border-right: 1px solid #fff;
+    transition: color .4s;
+    cursor: pointer;
+}
+
+.footer .social__icon i:hover{
+    color: #ff0000;
+}
