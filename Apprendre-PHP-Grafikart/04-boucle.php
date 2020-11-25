@@ -1,5 +1,5 @@
 <?php
-/*
+
 $chiffre = null;
 
 //boucle tant que :
@@ -43,7 +43,7 @@ foreach ($eleves2 as $classe => $listEleve) {
         echo "- $eleve \n";
     }
 };
-*/
+
 //exo:
 /*
 Demander a utilisateur de rentrer une note ou de taper "fin"
@@ -69,7 +69,7 @@ while (true) {
 foreach ($notes as $note) {
     echo "- $note \n";
 }
-*/
+
 
 //Exo2:
 /*
