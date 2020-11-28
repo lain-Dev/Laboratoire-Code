@@ -49,7 +49,7 @@ foreach ($eleves2 as $classe => $listEleve) {
 Demander a utilisateur de rentrer une note ou de taper "fin"
 chaque note est sauvegardé dans un tableau $notes (pensez $notes[])
 à la fin pour chaque note on affiche notes sous forme de liste: 
- 
+ */
 
 $notes = [];
 
