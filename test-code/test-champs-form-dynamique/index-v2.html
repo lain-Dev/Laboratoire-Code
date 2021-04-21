@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <form class="form_tresorerie">
+
+        <!--Objet-->
+        <div class="row form-group" id="container_objet">
+            <div class="col col-md-3">
+                <label for="objet" class=" form-control-label">Objet<span class="red">*</span></label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input id="tresorerie_objet" name="tresorerie_objet" value="" type="text" required="" onchange="" class="form-control cc-name valid">
+        
+            </div>
+        </div>
+
+        <!--Etape 01-->
+        <div class="row form-group"> 
+          <div class="col col-md-3">
+            <label class=" form-control-label" for="type_tresorerie">Type d'opération :</label>
+          </div>
+          <div class="col-12 col-md-9"> 
+            <select class="custom-select" id="type_tresorerie" name="" required>
+              <option selected>Choisir...</option>
+                <option value="Encaissement">Encaissement</option>
+                <option value="Décaissement">Décaissement</option>
+            </select>
+          </div>
+        </div>
+
+        <!--Etape 02
+
+            ****si Encaissement****
+
+            <div class="row form-group" id="encaissement"> 
+                <div class="col col-md-3">
+                  <label class=" form-control-label" for="catégorie_encaissement">Catégorie Encaissement:</label>
+                </div>
+                <div class="col-12 col-md-9"> 
+                  <select class="custom-select" id="catégorie_encaissement" name="catégorie_encaissement" required>
+                    <option selected>Choisir...</option>
+                      <option value="Facturation client">Facturation client</option>
+                      <option value="Emprunts">Emprunts</option>
+                      <option value="Divers">Divers</option>
+                  </select>
+                </div>
+            </div>
+
+                ****si Encaissement / Facturation Client****
+
+                <div id="facturation_client">
+
+                    <div class="row form-group">
+        
+                      <div class="col col-md-3">
+                        <label for="nom_client" class=" form-control-label">nom_client<span class="red">*</span></label>
+                      </div>
+                      <div class="col-12 col-md-9">
+                        <input id="facturation_client_nom_client" name="facturation_client_nom_client" value="" type="text" required="" onchange="" class="form-control cc-name valid" required>
+                      </div>
+                    </div>
+                  
+                    <div class="row form-group"> 
+                      <div class="col col-md-3">
+                        <label class=" form-control-label" for="prestation_client">type_prestation_client</label>
+                      </div>
+                      <div class="col-12 col-md-9"> 
+                        <select class="custom-select" id="prestation_client" name="prestation_client" required>
+                          <option selected>Choisir...</option>
+                          <option value="Développement">Développement</option>
+                          <option value="Maintenance">Maintenance</option>
+                        </select>
+                    </div>
+        
+                  </div> 
+        
+                </div>
+
+            ****si Décaissement****
+
+            <div class="row form-group" id="decaissement"> 
+                <div class="col col-md-3">
+                  <label class=" form-control-label" for="catégorie_decaissement">Catégorie Décaissement:</label>
+                </div>
+                <div class="col-12 col-md-9"> 
+                  <select class="custom-select" id="catégorie_decaissement" name="catégorie_decaissement" required>
+                    <option selected>Choisir...</option>
+                      <option value="Rémunération">Rémunération</option>
+                      <option value="Frais généraux">Frais généraux</option>
+                      <option value="Déplacements">Déplacements</option>
+                      <option value="Locaux">Locaux</option>
+                      <option value="Remboursement prêt">Remboursement prêt</option>
+                      <option value="TVA">TVA</option>
+                  </select>
+                </div>
+            </div>
+
+                ****si Décaissement / Rémunération:****
+
+                <div class="row form-group" id="remuneration"> 
+                    <div class="col col-md-3">
+                      <label class=" form-control-label" for="remuneration">Rémunération</label>
+                    </div>
+                    <div class="col-12 col-md-9"> 
+                      <select class="custom-select" id="remuneration" name="remuneration" required>
+                        <option selected>Choisir...</option>
+                        <option value="Prélèvement à la source">Prélèvement à la source</option>
+                        <option value="retraite">retraite</option>
+                        <option value="recrutement">recrutement</option>
+                        <option value="salaires">salaires</option>
+                        <option value="urssaf">urssaf</option>
+                      </select>
+                    </div>
+                </div> 
+        
+        *****Dernier champs Ajouter******
+        <div id="autres_champs">
+            <div class="row form-group" id="container_date_debut">
+                <div class="col col-md-3">
+                    <label for="date_debut" class=" form-control-label">Date de début<span class="red">*</span></label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input id="date" name="tresorerie_date_debut" value="2021-04-21" type="date" required="" class="form-control cc-name valid" style="text-align: left;" onchange="">
+            
+                </div>
+            </div>
+
+            <div class="row form-group" id="container_date_fin">
+                <div class="col col-md-3">
+                    <label for="date_fin" class=" form-control-label">Date de fin<span class="red">*</span></label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input id="date" name="tresorerie_date_fin" value="2021-04-21" type="date" required="" class="form-control cc-name valid" style="text-align: left;" onchange="">
+            
+                </div>
+            </div>
+
+            <div class="row form-group" id="container_payable">
+                <div class="col col-md-3">
+                    <label for="payable" class=" form-control-label">Payable le<span class="red">*</span></label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input id="tresorerie_payable" step="any" name="tresorerie_payable" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right">
+            
+                </div>
+            </div>
+
+            <div class="row form-group" id="container_montant_previsionnel">
+                <div class="col col-md-3">
+                    <label for="montant_previsionnel" class=" form-control-label">Montant prévisionnel<span class="red">*</span></label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input id="tresorerie_montant_previsionnel" step="any" name="tresorerie_montant_previsionnel" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right">
+            
+                </div>
+            </div>
+
+            <div class="row form-group" id="container_montant_reel">
+                <div class="col col-md-3">
+                    <label for="montant_reel" class=" form-control-label">Montant réel<span class="red">*</span></label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input id="tresorerie_montant_reel" step="any" name="tresorerie_montant_reel" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right">
+            
+                </div>
+            </div>
+
+            <div class="row form-group" id="container_tags">
+                <div class="col col-md-3">
+                    <label for="tags" class=" form-control-label">Tags</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input id="tresorerie_tags" name="tresorerie_tags" value="" type="text" onchange="" class="form-control cc-name valid">
+
+                </div>
+            </div>
+
+            <div class="row form-group" id="container_ajouter">
+                <div class="col col-md-3">
+                    <label for="ajouter" class=" form-control-label">Ajouter transaction<span class="red">*</span></label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input id="tresorerie_ajouter" name="tresorerie_ajouter" value="" type="button" required onclick class="form-control cc-name valid">
+            
+                </div>
+            </div>
+
+        </div>
+        -->
+      </form>
+    </div>
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!---Script selection type trésorerie-->
+    <script>
+      $(document).ready(function() 
+      {
+
+        //sur "id=type_tresorerie" du select
+        $('#type_tresorerie').change(function()
+        {
+    
+          var total = $(this).val();
+
+          //remove all
+          $('#encaissement').each(function(index){
+            if (index == 0) $(this).remove();
+          });
+          $('#decaissement').each(function(index){
+            if (index == 0) $(this).remove();
+          });
+
+          $('#autres_champs').each(function(index){
+            if (index == 0) $(this).remove();
+          });
+
+          $('#remuneration').each(function(index){
+            if (index == 0) $(this).remove();
+          });
+
+          //condition
+          if("Encaissement" ||"Décaissement" == total)
+          {
+            //Etape lors encaisement:
+
+            if ("Encaissement" == total) 
+            {
+
+                console.log("Encaissement");
+                $('<div class="row form-group" id="encaissement"> <div class="col col-md-3"> <label class=" form-control-label" for="catégorie_encaissement">Catégorie Encaissement:</label> </div> <div class="col-12 col-md-9"> <select class="custom-select" id="catégorie_encaissement" name="catégorie_encaissement"> <option selected>Choisir...</option> <option value="Facturation client">Facturation client</option> <option value="Emprunts">Emprunts</option> <option value="Divers">Divers</option> </select> </div> </div>').appendTo(".form_tresorerie");
+
+                //function catégorie encaissement
+                $('#catégorie_encaissement').change(function()
+                {
+                    var total = $(this).val();
+
+                    $('#facturation_client').each(function(index){
+                        if (index == 0) $(this).remove();
+                    });
+
+                    $('#autres_champs').each(function(index){
+                        if (index == 0) $(this).remove();
+                    });
+
+                    //si choisi facture client
+                    if("Facturation client" == total)
+                    {
+                        console.log("Facturation client");
+                        $('<div id="facturation_client"><div class="row form-group"><div class="col col-md-3"><label for="nom_client" class=" form-control-label">nom_client<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="facturation_client_nom_client" name="facturation_client_nom_client" value="" type="text" required="" onchange="" class="form-control cc-name valid"></div></div><div class="row form-group"> <div class="col col-md-3"><label class=" form-control-label" for="prestation_client">type_prestation_client</label></div><div class="col-12 col-md-9"> <select class="custom-select" id="prestation_client" name="prestation_client"><option selected>Choisir...</option><option value="Développement">Développement</option><option value="Maintenance">Maintenance</option></select></div></div> </div>').appendTo(".form_tresorerie");
+
+                        //function lors type prestation client
+                        $('#prestation_client').change(function()
+                        {
+                            var total = $(this).val();
+
+                           
+                            $('#autres_champs').each(function(index){
+                                if (index == 0) $(this).remove();
+                            });
+
+                            if("Développement" || "Maintenance" == total)
+                            {
+                                console.log("ajout dernier champs suite prestation client");
+                                $('<div id="autres_champs"><div class="row form-group" id="container_date_debut"><div class="col col-md-3"><label for="date_debut" class=" form-control-label">Date de début<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="date" name="tresorerie_date_debut" value="2021-04-21" type="date" required="" class="form-control cc-name valid" style="text-align: left;" onchange=""></div></div><div class="row form-group" id="container_date_fin"><div class="col col-md-3"><label for="date_fin" class=" form-control-label">Date de fin<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="date" name="tresorerie_date_fin" value="2021-04-21" type="date" required="" class="form-control cc-name valid" style="text-align: left;" onchange=""></div></div><div class="row form-group" id="container_payable"><div class="col col-md-3"><label for="payable" class=" form-control-label">Payable le<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_payable" step="any" name="tresorerie_payable" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_montant_previsionnel"><div class="col col-md-3"><label for="montant_previsionnel" class=" form-control-label">Montant prévisionnel<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_montant_previsionnel" step="any" name="tresorerie_montant_previsionnel" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_montant_reel"><div class="col col-md-3"><label for="montant_reel" class=" form-control-label">Montant réel<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_montant_reel" step="any" name="tresorerie_montant_reel" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_tags"><div class="col col-md-3"><label for="tags" class=" form-control-label">Tags</label></div><div class="col-12 col-md-9"><input id="tresorerie_tags" name="tresorerie_tags" value="" type="text" onchange="" class="form-control cc-name valid"></div></div><div class="row form-group" id="container_ajouter"><div class="col col-md-3"><label for="ajouter" class=" form-control-label">Ajouter transaction<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_ajouter" name="tresorerie_ajouter" value="" type="button" required onclick class="form-control cc-name valid"></div></div></div>').appendTo(".form_tresorerie");
+                            }
+                        });
+                    }
+                    //si choisi autre catégorie affiche le reste des champs
+                    else{
+                        console.log("Facturation autre, ajout autres champs");
+                        $('<div id="autres_champs"><div class="row form-group" id="container_date_debut"><div class="col col-md-3"><label for="date_debut" class=" form-control-label">Date de début<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="date" name="tresorerie_date_debut" value="2021-04-21" type="date" required="" class="form-control cc-name valid" style="text-align: left;" onchange=""></div></div><div class="row form-group" id="container_date_fin"><div class="col col-md-3"><label for="date_fin" class=" form-control-label">Date de fin<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="date" name="tresorerie_date_fin" value="2021-04-21" type="date" required="" class="form-control cc-name valid" style="text-align: left;" onchange=""></div></div><div class="row form-group" id="container_payable"><div class="col col-md-3"><label for="payable" class=" form-control-label">Payable le<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_payable" step="any" name="tresorerie_payable" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_montant_previsionnel"><div class="col col-md-3"><label for="montant_previsionnel" class=" form-control-label">Montant prévisionnel<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_montant_previsionnel" step="any" name="tresorerie_montant_previsionnel" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_montant_reel"><div class="col col-md-3"><label for="montant_reel" class=" form-control-label">Montant réel<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_montant_reel" step="any" name="tresorerie_montant_reel" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_tags"><div class="col col-md-3"><label for="tags" class=" form-control-label">Tags</label></div><div class="col-12 col-md-9"><input id="tresorerie_tags" name="tresorerie_tags" value="" type="text" onchange="" class="form-control cc-name valid"></div></div><div class="row form-group" id="container_ajouter"><div class="col col-md-3"><label for="ajouter" class=" form-control-label">Ajouter transaction<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_ajouter" name="tresorerie_ajouter" value="" type="button" required onclick class="form-control cc-name valid"></div></div></div>').appendTo(".form_tresorerie");
+                    }
+                });
+
+
+            }
+            // Etape lors decaissement
+            else if("Décaissement" == total)
+            {
+                console.log("Décaissement");
+                $('<div class="row form-group" id="decaissement"> <div class="col col-md-3"> <label class=" form-control-label" for="catégorie_decaissement">Catégorie Décaissement:</label> </div> <div class="col-12 col-md-9"> <select class="custom-select" id="catégorie_decaissement" name="catégorie_decaissement"> <option selected>Choisir...</option> <option value="Rémunération">Rémunération</option> <option value="Frais généraux">Frais généraux</option> <option value="Déplacements">Déplacements</option> <option value="Locaux">Locaux</option> <option value="Remboursement prêt">Remboursement prêt</option> <option value="TVA">TVA</option> </select> </div> </div>').appendTo(".form_tresorerie");
+
+
+                //fonction catégorie Décaissement
+                $('#catégorie_decaissement').change(function()
+                {
+                    var total = $(this).val();
+
+                    $('#remuneration').each(function(index){
+                        if (index == 0) $(this).remove();
+                    });
+
+                    $('#autres_champs').each(function(index){
+                        if (index == 0) $(this).remove();
+                    });
+
+                    //si choisi rémunération
+                    if("Rémunération" == total)
+                    {
+                        console.log("choix rémunération");
+                        $('<div class="row form-group" id="remuneration"> <div class="col col-md-3"><label class=" form-control-label" for="remuneration">Rémunération</label></div><div class="col-12 col-md-9"> <select class="custom-select" id="remuneration" name="remuneration"><option selected>Choisir...</option><option value="Prélèvement à la source">Prélèvement à la source</option><option value="retraite">retraite</option><option value="recrutement">recrutement</option><option value="salaires">salaires</option><option value="urssaf">urssaf</option></select></div></div>').appendTo(".form_tresorerie");
+
+                        //function lors choix rémunération
+                        $('#remuneration').change(function()
+                        {
+                            $('#autres_champs').each(function(index){
+                                if (index == 0) $(this).remove();
+                            });
+
+                            if ("Prélèvement à la source" || "retraite" || "recrutement" || "salaires" || "urssaf" == total)
+                            {
+                                console.log("ajout dernier champs suite choix rémunération");
+                                $('<div id="autres_champs"><div class="row form-group" id="container_date_debut"><div class="col col-md-3"><label for="date_debut" class=" form-control-label">Date de début<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="date" name="tresorerie_date_debut" value="2021-04-21" type="date" required="" class="form-control cc-name valid" style="text-align: left;" onchange=""></div></div><div class="row form-group" id="container_date_fin"><div class="col col-md-3"><label for="date_fin" class=" form-control-label">Date de fin<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="date" name="tresorerie_date_fin" value="2021-04-21" type="date" required="" class="form-control cc-name valid" style="text-align: left;" onchange=""></div></div><div class="row form-group" id="container_payable"><div class="col col-md-3"><label for="payable" class=" form-control-label">Payable le<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_payable" step="any" name="tresorerie_payable" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_montant_previsionnel"><div class="col col-md-3"><label for="montant_previsionnel" class=" form-control-label">Montant prévisionnel<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_montant_previsionnel" step="any" name="tresorerie_montant_previsionnel" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_montant_reel"><div class="col col-md-3"><label for="montant_reel" class=" form-control-label">Montant réel<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_montant_reel" step="any" name="tresorerie_montant_reel" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_tags"><div class="col col-md-3"><label for="tags" class=" form-control-label">Tags</label></div><div class="col-12 col-md-9"><input id="tresorerie_tags" name="tresorerie_tags" value="" type="text" onchange="" class="form-control cc-name valid"></div></div><div class="row form-group" id="container_ajouter"><div class="col col-md-3"><label for="ajouter" class=" form-control-label">Ajouter transaction<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_ajouter" name="tresorerie_ajouter" value="" type="button" required onclick class="form-control cc-name valid"></div></div></div>').appendTo(".form_tresorerie");
+                            }
+                        });
+                    }
+                    else{
+
+                        console.log("catégorie décaissement autre que rémunération, ajout autres champs");
+                        $('<div id="autres_champs"><div class="row form-group" id="container_date_debut"><div class="col col-md-3"><label for="date_debut" class=" form-control-label">Date de début<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="date" name="tresorerie_date_debut" value="2021-04-21" type="date" required="" class="form-control cc-name valid" style="text-align: left;" onchange=""></div></div><div class="row form-group" id="container_date_fin"><div class="col col-md-3"><label for="date_fin" class=" form-control-label">Date de fin<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="date" name="tresorerie_date_fin" value="2021-04-21" type="date" required="" class="form-control cc-name valid" style="text-align: left;" onchange=""></div></div><div class="row form-group" id="container_payable"><div class="col col-md-3"><label for="payable" class=" form-control-label">Payable le<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_payable" step="any" name="tresorerie_payable" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_montant_previsionnel"><div class="col col-md-3"><label for="montant_previsionnel" class=" form-control-label">Montant prévisionnel<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_montant_previsionnel" step="any" name="tresorerie_montant_previsionnel" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_montant_reel"><div class="col col-md-3"><label for="montant_reel" class=" form-control-label">Montant réel<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_montant_reel" step="any" name="tresorerie_montant_reel" value="0" type="text" pattern="[0-9]+([\.,][0-9]+)?" required="" onchange="" class="form-control cc-name valid" style="text-align: right"></div></div><div class="row form-group" id="container_tags"><div class="col col-md-3"><label for="tags" class=" form-control-label">Tags</label></div><div class="col-12 col-md-9"><input id="tresorerie_tags" name="tresorerie_tags" value="" type="text" onchange="" class="form-control cc-name valid"></div></div><div class="row form-group" id="container_ajouter"><div class="col col-md-3"><label for="ajouter" class=" form-control-label">Ajouter transaction<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="tresorerie_ajouter" name="tresorerie_ajouter" value="" type="button" required onclick class="form-control cc-name valid"></div></div></div>').appendTo(".form_tresorerie");
+                    }
+
+                });
+            }
+          }
+          
+        });
+
+      });
+      
+    </script>
+  </body>
+</html>

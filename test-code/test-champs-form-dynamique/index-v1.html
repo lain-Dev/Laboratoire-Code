@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <form class="form_tresorerie">
+
+        <div class="row form-group"> 
+          <div class="col col-md-3">
+            <label class=" form-control-label" for="type_tresorerie">Type de trésorerie</label>
+          </div>
+          <div class="col-12 col-md-9"> 
+            <select class="custom-select" id="type_tresorerie" name="">
+              <option selected>Choisir...</option>
+              
+              <optgroup label="Encaissement">
+                <option value="Emprunts">Emprunts</option>
+                <option value="Facturation client">Facturation client</option>
+                <option value="Divers">Divers</option>
+              </optgroup>
+
+              <optgroup label="Décaissement">
+                <option value="Rémunération">Rémunération</option>
+                <option value="Frais généraux">Frais généraux</option>
+                <option value="Déplacements">Déplacements</option>
+                <option value="Locaux">Locaux</option>
+                <option value="Remboursement prêt">Remboursement prêt</option>
+                <option value="TVA">TVA</option>
+              </optgroup>
+              
+            </select>
+          </div>
+        </div>
+
+        
+
+
+        <!-- Exemple de champs à vérifier les names pour correspondre aux tableaux du projet
+
+          *Pour Encaissement / facturation du client :*
+          <div id="container_facturation_client">
+
+            <div class="row form-group">
+
+              <div class="col col-md-3">
+                <label for="nom_client" class=" form-control-label">nom_client<span class="red">*</span></label>
+              </div>
+              <div class="col-12 col-md-9">
+                <input id="facturation_client_nom_client" name="facturation_client_nom_client" value="" type="text" required="" onchange="" class="form-control cc-name valid">
+              </div>
+            </div>
+          
+            <div class="row form-group"> 
+              <div class="col col-md-3">
+                <label class=" form-control-label" for="prestation_client">type_prestation_client</label>
+              </div>
+              <div class="col-12 col-md-9"> 
+                <select class="custom-select" id="prestation_client" name="prestation_client">
+                  <option selected>Choisir...</option>
+                  <option value="Développement">Développement</option>
+                  <option value="Maintenance">Maintenance</option>
+                </select>
+            </div>
+
+          </div> 
+
+        </div>
+        *Pour Décaissement / rémunération*
+
+        <div class="row form-group"> 
+          <div class="col col-md-3">
+            <label class=" form-control-label" for="remuneration">Rémunération</label>
+          </div>
+          <div class="col-12 col-md-9"> 
+            <select class="custom-select" id="remuneration" name="remuneration">
+              <option selected>Choisir...</option>
+              <option value="Prélèvement à la source">Prélèvement à la source</option>
+              <option value="retraite">retraite</option>
+              <option value="recrutement">recrutement</option>
+              <option value="salaires">salaires</option>
+              <option value="urssaf">urssaf</option>
+            </select>
+          </div>
+        </div> 
+      
+      -->
+
+      </form>
+    </div>
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!---Script selection type trésorerie-->
+    <script>
+      $(document).ready(function() 
+      {
+
+        //sur "id=type_tresorerie" du select
+        $('#type_tresorerie').change(function()
+        {
+    
+          var total = $(this).val();
+
+          //remove all
+          $('#container_remuneration').each(function(index){
+            if (index == 0) $(this).remove();
+          });
+          $('#container_facturation_client').each(function(index){
+            if (index == 0) $(this).remove();
+          });
+
+          //condition
+          if("Facturation client" ||"Rémunération" == total)
+          {
+            if ("Facturation client" == total) 
+            {
+            console.log("facturation client");
+
+            $('<div id="container_facturation_client"><div class="row form-group"><div class="col col-md-3"><label for="nom_client" class=" form-control-label">nom_client<span class="red">*</span></label></div><div class="col-12 col-md-9"><input id="facturation_client_nom_client" name="facturation_client_nom_client" value="" type="text" required="" onchange="" class="form-control cc-name valid"></div></div><div class="row form-group"><div class="col col-md-3"><label class=" form-control-label" for="prestation_client">type_prestation_client</label></div><div class="col-12 col-md-9"> <select class="custom-select" id="prestation_client" name="prestation_client"><option selected>Choisir...</option><option value="Développement">Développement</option><option value="Maintenance">Maintenance</option></select></div></div></div>').appendTo(".form_tresorerie");
+            }
+            else if("Rémunération" == total)
+            {
+            console.log("Rémunération");
+
+            $('<div class="row form-group" id="container_remuneration"><div class="col col-md-3"><label class=" form-control-label" for="remuneration">Rémunération</label></div><div class="col-12 col-md-9"> <select class="custom-select" id="remuneration" name="remuneration"><option selected>Choisir...</option><option value="Prélèvement à la source">Prélèvement à la source</option><option value="retraite">retraite</option><option value="recrutement">recrutement</option><option value="salaires">salaires</option><option value="urssaf">urssaf</option></select></div></div> ').appendTo(".form_tresorerie");
+            }
+          }
+          
+        });
+
+      });
+      
+    </script>
+  </body>
+</html>
