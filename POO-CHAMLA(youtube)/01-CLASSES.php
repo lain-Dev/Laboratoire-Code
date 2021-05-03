@@ -1,11 +1,14 @@
 <?php
 
 /**
- * Employe
+ * la classe Employe
+ * 
+ * on définit ce qu'est un employé
+ * 
  */
 class Employe 
 {
-    //on appelle les prppriétés d'une classe
+    //on appelle les propriétés d'une classe
     public $nom;
     public $prenom;
     public $age;
@@ -30,7 +33,7 @@ class Employe
     /**
      * presentation
      * 
-     * on appelle pas une fonction mais une méthode: presentation()
+     * on appelle pas une fonction mais une méthode de l'objet: presentation()
      *
      * @return void
      */
@@ -40,11 +43,9 @@ class Employe
     }
 }
 
-//le "new" crée une une nouvelle instance de objet
-$employe1 = new employe("lebon", "olivier", 37);//appel le constructeur
-
-
-$employe2 = new employe("ecormier", "valerie", 35);
+//le "new" crée une une nouvelle instance de de la classe Employe
+$employe1 = new Employe("lebon", "olivier", 37);//appel le constructeur
+$employe2 = new Employe("ecormier", "valerie", 35);
 
 
 //j'appel la méthode(function presentation)

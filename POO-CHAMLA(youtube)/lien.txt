@@ -1,1 +1,5 @@
 https://www.youtube.com/watch?v=fZcGXjg97Ns&list=PLpUhHhXoxrjcOTNSHdIo_hSwtXFku16mL
+
+lancer terminal : lancer serveur interne =>
+
+php -S localhost:8000  , ensuite  cliquer sur listening on htpp://localhost:8000 pour lancer la page !!!!
