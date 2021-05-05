@@ -1,0 +1,19 @@
+Les différents points optimisations du code :
+
+--Cache serveur:
+Renseignez-vous sur les dispositifs de mise en cache disponibles selon les technologies que vous utilisez. Avec PHP, vous pouvez tester par exemple Memcache ou bien un système de templates comme Smarty.
+
+--Cache client (navigateur):
+L’objectif ici est de confier au navigateur de l’internaute le soin de ne pas redemander à chaque fois au serveur du site web de fournir des données, mais de puiser si possible dans une version locale enregistrée sur le disque dur lors d’une précédente visite.
+
+Pour cela, il faut configurer les en-têtes HTTP Expires et Cache-Control qui permettent de fixer quand un élément mis en cache par le navigateur est périmé et doit par conséquent être mis à jour.
+
+Sous Apache, ces éléments se configurent au travers de deux directives :
+
+Expires : il s’agit de la date d’expiration du contenu
+Cache-Control : c’est un paramètre plus évolué que Expires, apparu avec le protocole HTTP 1.1, qui permet de configurer certains détails
+A noter qu’à partir de la version Apache 2.0, il est possible de configurer ces deux directives en même temps avec le module mod_expires. La date d’expiration peut être configurée en relatif ou en absolu. Il est conseillé de fixer un délai d’expiration long pour les fichiers statiques (par exemple 1 an) et court pour les fichiers dynamiques (par exemple 1 minute). Voyez la partie ressources en fin d’articles pour plus d’explications.
+
+--Entêtes LastModified et ETag
+LastModified est un entête HTTP qui définit la dernière date de modification d’un fichier. Il est utilisé dans la gestion du cache client. Il existe aussi l’entête ETag mais vous pouvez commencer par utiliser uniquement LastModified.
+
