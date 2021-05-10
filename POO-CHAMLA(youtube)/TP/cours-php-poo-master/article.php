@@ -11,6 +11,9 @@
  * On va ensuite afficher l'article puis ses commentaires
  */
 
+ //on appel le fichier database(tjs appel en haut)
+ require_once('libraries/database.php');
+
 /**
  * 1. Récupération du param "id" et vérification de celui-ci
  */
@@ -28,17 +31,10 @@ if (!$article_id) {
 }
 
 /**
- * 2. Connexion à la base de données avec PDO
- * Attention, on précise ici deux options :
- * - Le mode d'erreur : le mode exception permet à PDO de nous prévenir violament quand on fait une connerie ;-)
- * - Le mode d'exploitation : FETCH_ASSOC veut dire qu'on exploitera les données sous la forme de tableaux associatifs
- * 
- * PS : Vous remarquez que ce sont les mêmes lignes que pour l'index.php ?!
+ * 1. Connexion à la base de données avec PDO
  */
-$pdo = new PDO('mysql:host=localhost;dbname=blogpoo;charset=utf8', 'root', '', [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-]);
+$pdo = getPdo();
+
 
 /**
  * 3. Récupération de l'article en question
@@ -65,8 +61,11 @@ $commentaires = $query->fetchAll();
  * 5. On affiche 
  */
 $pageTitle = $article['title'];
-ob_start();
-require('templates/articles/show.html.php');
-$pageContent = ob_get_clean();
-
-require('templates/layout.html.php');
+$pageTitle = "Accueil";
+//appel de la fonction render() et on indique les variables qui sont nécessaire pour affichage qui se trouve dans shows
+render('articles/show', [
+    'pageTitle' => $pageTitle, 
+    'article' => $artile, 
+    'commenataires' => $commentaires, 
+    'article_id' => $article_id
+    ]);

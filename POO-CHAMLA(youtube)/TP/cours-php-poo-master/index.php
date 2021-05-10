@@ -7,6 +7,8 @@
  * puis on va boucler dessus pour afficher chacun d'entre eux
  */
 
+ //on appel le fichier database(tjs appel en haut)
+ require_once('libraries/database.php');
  require_once('libraries/database.php');
 
 /**
@@ -26,10 +28,8 @@ $articles = $resultats->fetchAll();
  * 3. Affichage
  */
 $pageTitle = "Accueil";
-//ouvre un tampon mais n'affiche pas de suite
-ob_start();
-require('templates/articles/index.html.php');
-//on fait afficher tout ce qui se trouve dans le tampon précédement (ob_start();)
-$pageContent = ob_get_clean();
+//appel de la fonction render()
+render('article/index', [
+    'article' => $artile,
+]);
 
-require('templates/layout.html.php');
